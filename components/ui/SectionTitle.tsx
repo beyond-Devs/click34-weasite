@@ -18,7 +18,7 @@ export function SectionTitle({ badge, title, subtitle, centered = true, classNam
           <Badge>{badge}</Badge>
         </div>
       )}
-      <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-slate-900 mb-4 leading-tight">
+      <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-dark mb-4 leading-tight">
         {title}
       </h2>
       {subtitle && (

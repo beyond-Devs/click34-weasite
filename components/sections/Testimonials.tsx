@@ -21,7 +21,7 @@ const testimonials = [
     text: 'Precisávamos de uma plataforma digital urgentemente. A Click 3.4 entregou em tempo recorde com uma qualidade excepcional. O nosso site triplicou o número de clientes online!',
     rating: 5,
     initials: 'MJ',
-    gradient: 'from-blue-500 to-brand-600',
+    gradient: 'from-brand-500 to-brand-600',
   },
   {
     name: 'Rui Fernandes',
@@ -30,7 +30,7 @@ const testimonials = [
     text: 'Como startup, precisávamos de um parceiro tecnológico de confiança. A Click 3.4 não foi apenas um fornecedor — foram verdadeiros parceiros no nosso crescimento. Recomendo sem hesitar.',
     rating: 5,
     initials: 'RF',
-    gradient: 'from-brand-600 to-blue-700',
+    gradient: 'from-brand-600 to-brand-700',
   },
   {
     name: 'Celeste Martins',
@@ -48,7 +48,7 @@ const testimonials = [
     text: 'A plataforma de e-commerce que a Click 3.4 criou para nós aumentou as nossas vendas em 200% no primeiro trimestre. Investimento que valeu cada kwanza!',
     rating: 5,
     initials: 'BC',
-    gradient: 'from-blue-600 to-brand-500',
+    gradient: 'from-brand-600 to-brand-500',
   },
 ]
 
@@ -74,7 +74,7 @@ export function Testimonials() {
   return (
     <section id="testimonials" className="py-24 bg-white relative overflow-hidden">
       <div className="absolute right-0 bottom-0 w-96 h-96 bg-brand-400/8 rounded-full blur-3xl pointer-events-none" />
-      <div className="absolute left-0 top-0 w-72 h-72 bg-blue-400/6 rounded-full blur-3xl pointer-events-none" />
+      <div className="absolute left-0 top-0 w-72 h-72 bg-brand-400/6 rounded-full blur-3xl pointer-events-none" />
 
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <SectionTitle
@@ -106,7 +106,7 @@ export function Testimonials() {
                   {t.initials}
                 </div>
                 <div>
-                  <div className="text-slate-900 font-semibold text-sm">{t.name}</div>
+                  <div className="text-dark font-semibold text-sm">{t.name}</div>
                   <div className="text-slate-500 text-xs">{t.role} · {t.company}</div>
                 </div>
               </div>

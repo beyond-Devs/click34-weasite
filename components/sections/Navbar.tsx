@@ -94,7 +94,7 @@ export function Navbar() {
                   'px-4 py-2 rounded-full text-sm font-medium transition-all duration-200',
                   active === link.href
                     ? 'text-brand-600 bg-brand-500/10'
-                    : 'text-slate-600 hover:text-slate-900 hover:bg-slate-100'
+                    : 'text-slate-600 hover:text-dark hover:bg-slate-100'
                 )}
               >
                 {link.label}
@@ -110,7 +110,7 @@ export function Navbar() {
 
           {/* Mobile toggle */}
           <button
-            className="md:hidden text-slate-600 hover:text-slate-900 p-2"
+            className="md:hidden text-slate-600 hover:text-dark p-2"
             onClick={() => setMobileOpen(o => !o)}
           >
             {mobileOpen ? <X size={24} /> : <Menu size={24} />}
@@ -134,7 +134,7 @@ export function Navbar() {
                 'text-left px-4 py-3 rounded-xl transition-all duration-200 font-medium',
                 active === link.href
                   ? 'text-brand-600 bg-brand-500/10'
-                  : 'text-slate-700 hover:text-slate-900 hover:bg-slate-100'
+                  : 'text-slate-700 hover:text-dark hover:bg-slate-100'
               )}
             >
               {link.label}

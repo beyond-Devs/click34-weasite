@@ -18,7 +18,7 @@ const team = [
     role: 'CTO',
     bio: 'Engenheira de software especializada em arquitectura de sistemas escaláveis e cloud computing para empresas africanas.',
     initials: 'AP',
-    gradient: 'from-blue-500 to-brand-600',
+    gradient: 'from-brand-500 to-brand-600',
     socials: { linkedin: '#', github: '#', twitter: '#' },
   },
   {
@@ -26,7 +26,7 @@ const team = [
     role: 'Lead Designer',
     bio: 'Designer de produto com foco em experiências digitais que equilibram estética e funcionalidade para o mercado angolano.',
     initials: 'MC',
-    gradient: 'from-brand-600 to-blue-700',
+    gradient: 'from-brand-600 to-brand-700',
     socials: { linkedin: '#', twitter: '#' },
   },
   {
@@ -45,7 +45,7 @@ export function Team() {
       <div
         className="absolute inset-0 opacity-30 pointer-events-none"
         style={{
-          backgroundImage: 'radial-gradient(#1a5fb412 1px, transparent 1px)',
+          backgroundImage: 'radial-gradient(#161F6412 1px, transparent 1px)',
           backgroundSize: '24px 24px',
         }}
       />
@@ -71,7 +71,7 @@ export function Team() {
               </div>
 
               {/* Info */}
-              <h3 className="font-bold text-slate-900 group-hover:text-brand-600 transition-colors">
+              <h3 className="font-bold text-dark group-hover:text-brand-600 transition-colors">
                 {member.name}
               </h3>
               <p className="text-brand-600 text-xs font-semibold uppercase tracking-wider mb-3">

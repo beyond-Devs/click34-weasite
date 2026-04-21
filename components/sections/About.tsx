@@ -23,7 +23,7 @@ export function About() {
     <section id="about" className="py-24 bg-white relative overflow-hidden">
       {/* Decorative blob */}
       <div className="absolute left-0 top-1/2 -translate-y-1/2 w-80 h-80 bg-brand-400/10 rounded-full blur-3xl pointer-events-none" />
-      <div className="absolute right-0 bottom-0 w-64 h-64 bg-blue-400/8 rounded-full blur-3xl pointer-events-none" />
+      <div className="absolute right-0 bottom-0 w-64 h-64 bg-brand-400/8 rounded-full blur-3xl pointer-events-none" />
 
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
@@ -32,7 +32,7 @@ export function About() {
             <div className="mb-4">
               <Badge>Sobre Nós</Badge>
             </div>
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-slate-900 mb-6 leading-tight">
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-dark mb-6 leading-tight">
               Tecnologia angolana ao{' '}
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-500 to-brand-400">
                 alcance de um click
@@ -73,7 +73,7 @@ export function About() {
                     <Icon size={22} className="text-white" />
                   </div>
                   <div>
-                    <h3 className="font-bold text-slate-900 mb-1 group-hover:text-brand-600 transition-colors">
+                    <h3 className="font-bold text-dark mb-1 group-hover:text-brand-600 transition-colors">
                       {pillar.label}
                     </h3>
                     <p className="text-slate-600 text-sm leading-relaxed">{pillar.text}</p>
@@ -83,19 +83,19 @@ export function About() {
             })}
 
             {/* Stats card */}
-            <div className="relative mt-4 p-6 rounded-2xl border border-brand-200 bg-gradient-to-br from-brand-50 to-blue-50 overflow-hidden">
+            <div className="relative mt-4 p-6 rounded-2xl border border-brand-200 bg-gradient-to-br from-brand-50 to-brand-50 overflow-hidden">
               <svg className="absolute inset-0 w-full h-full opacity-15" xmlns="http://www.w3.org/2000/svg">
                 <pattern id="sm-circuit" x="0" y="0" width="60" height="60" patternUnits="userSpaceOnUse">
-                  <path d="M0 30 H25 M35 30 H60" stroke="#1a5fb4" strokeWidth="1" fill="none"/>
-                  <path d="M30 0 V25 M30 35 V60" stroke="#1a5fb4" strokeWidth="1" fill="none"/>
-                  <circle cx="30" cy="30" r="3" fill="none" stroke="#1a5fb4" strokeWidth="1"/>
+                  <path d="M0 30 H25 M35 30 H60" stroke="#161F64" strokeWidth="1" fill="none"/>
+                  <path d="M30 0 V25 M30 35 V60" stroke="#161F64" strokeWidth="1" fill="none"/>
+                  <circle cx="30" cy="30" r="3" fill="none" stroke="#161F64" strokeWidth="1"/>
                 </pattern>
                 <rect width="100%" height="100%" fill="url(#sm-circuit)"/>
               </svg>
               <div className="relative flex items-center gap-4">
                 <div className="text-4xl font-bold text-brand-600">3+</div>
                 <div>
-                  <div className="text-slate-900 font-semibold">Anos no Mercado</div>
+                  <div className="text-dark font-semibold">Anos no Mercado</div>
                   <div className="text-slate-600 text-sm">Construindo o futuro digital de Angola</div>
                 </div>
               </div>

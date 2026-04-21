@@ -21,7 +21,7 @@ html {
 
 body {
   background-color: #f7f9ff;
-  color: #0f172a;
+  color: #000000;
   font-family: var(--font-body);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -35,11 +35,11 @@ body {
   background: #eef2ff;
 }
 ::-webkit-scrollbar-thumb {
-  background: #1a5fb4;
+  background: #161F64;
   border-radius: 99px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: #164fa0;
+  background: #151F59;
 }
 
 /* Animations */
@@ -59,8 +59,8 @@ body {
 }
 
 @keyframes pulse-glow {
-  0%, 100% { box-shadow: 0 0 20px rgba(26,95,180,0.18); }
-  50%       { box-shadow: 0 0 50px rgba(26,95,180,0.38); }
+  0%, 100% { box-shadow: 0 0 20px rgba(22, 31, 100, 0.18); }
+  50%       { box-shadow: 0 0 50px rgba(22, 31, 100, 0.38); }
 }
 
 @keyframes spin {
@@ -74,13 +74,13 @@ body {
 
 /* Selection */
 ::selection {
-  background: rgba(26, 95, 180, 0.18);
-  color: #0f172a;
+  background: rgba(22, 31, 100, 0.18);
+  color: #000000;
 }
 
 /* Focus ring */
 :focus-visible {
-  outline: 2px solid #1a5fb4;
+  outline: 2px solid #161F64;
   outline-offset: 3px;
   border-radius: 4px;
 }

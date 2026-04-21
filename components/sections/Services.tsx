@@ -18,15 +18,15 @@ const services = [
     icon: Smartphone,
     title: 'Aplicações Mobile',
     desc: 'Apps iOS e Android nativos e híbridos com interfaces intuitivas e experiências de utilizador excepcionais.',
-    color: 'from-blue-500 to-brand-500',
-    bg: 'bg-blue-50',
+    color: 'from-brand-400 to-brand-500',
+    bg: 'bg-brand-50',
   },
   {
     icon: Cloud,
     title: 'Soluções Cloud',
     desc: 'Infraestrutura escalável na nuvem que garante alta disponibilidade, segurança e performance para o seu negócio.',
-    color: 'from-brand-600 to-blue-700',
-    bg: 'bg-indigo-50',
+    color: 'from-brand-600 to-brand-700',
+    bg: 'bg-brand-50',
   },
   {
     icon: Shield,
@@ -39,15 +39,15 @@ const services = [
     icon: Code2,
     title: 'Software à Medida',
     desc: 'Desenvolvimento de software personalizado que automatiza processos e resolve os desafios específicos do seu negócio.',
-    color: 'from-blue-600 to-brand-500',
-    bg: 'bg-sky-50',
+    color: 'from-brand-600 to-brand-500',
+    bg: 'bg-brand-50',
   },
   {
     icon: BarChart3,
     title: 'Consultoria Digital',
     desc: 'Estratégia e transformação digital completa — analisamos, planeamos e implementamos soluções que fazem crescer o seu negócio.',
-    color: 'from-brand-500 to-blue-600',
-    bg: 'bg-blue-50',
+    color: 'from-brand-500 to-brand-600',
+    bg: 'bg-brand-50',
   },
 ]
 
@@ -58,7 +58,7 @@ export function Services() {
       <div
         className="absolute inset-0 opacity-40 pointer-events-none"
         style={{
-          backgroundImage: 'radial-gradient(#1a5fb415 1px, transparent 1px)',
+          backgroundImage: 'radial-gradient(#161F6415 1px, transparent 1px)',
           backgroundSize: '28px 28px',
         }}
       />
@@ -84,7 +84,7 @@ export function Services() {
                 <div className={`inline-flex p-3 rounded-xl bg-gradient-to-br ${service.color} mb-4 shadow-md shadow-brand-500/20`}>
                   <Icon size={24} className="text-white" />
                 </div>
-                <h3 className="text-lg font-bold text-slate-900 mb-2 group-hover:text-brand-600 transition-colors">
+                <h3 className="text-lg font-bold text-dark mb-2 group-hover:text-brand-600 transition-colors">
                   {service.title}
                 </h3>
                 <p className="text-slate-600 text-sm leading-relaxed">{service.desc}</p>

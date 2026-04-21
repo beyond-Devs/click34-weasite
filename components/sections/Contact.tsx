@@ -49,7 +49,7 @@ export function Contact() {
       <div
         className="absolute inset-0 opacity-35 pointer-events-none"
         style={{
-          backgroundImage: 'radial-gradient(#1a5fb414 1px, transparent 1px)',
+          backgroundImage: 'radial-gradient(#161F6414 1px, transparent 1px)',
           backgroundSize: '28px 28px',
         }}
       />
@@ -66,7 +66,7 @@ export function Contact() {
           {/* Left: info */}
           <div className="lg:col-span-2 space-y-6">
             <div>
-              <h3 className="text-xl font-bold text-slate-900 mb-2">Fale connosco</h3>
+              <h3 className="text-xl font-bold text-dark mb-2">Fale connosco</h3>
               <p className="text-slate-600 text-sm leading-relaxed">
                 Estamos disponíveis para discutir o seu projecto, responder a dúvidas ou simplesmente
                 apresentar as nossas soluções. Entre em contacto!
@@ -88,7 +88,7 @@ export function Contact() {
                     </div>
                     <div>
                       <div className="text-xs text-slate-500 uppercase tracking-wider mb-0.5">{info.label}</div>
-                      <div className="text-slate-900 font-medium text-sm group-hover:text-brand-600 transition-colors">
+                      <div className="text-dark font-medium text-sm group-hover:text-brand-600 transition-colors">
                         {info.value}
                       </div>
                     </div>
@@ -98,8 +98,8 @@ export function Contact() {
             </div>
 
             {/* Working hours */}
-            <div className="p-5 rounded-2xl border border-brand-200 bg-gradient-to-br from-brand-50 to-blue-50">
-              <h4 className="text-slate-900 font-semibold mb-3">Horário de Atendimento</h4>
+            <div className="p-5 rounded-2xl border border-brand-200 bg-gradient-to-br from-brand-50 to-brand-50">
+              <h4 className="text-dark font-semibold mb-3">Horário de Atendimento</h4>
               <div className="space-y-2 text-sm">
                 <div className="flex justify-between">
                   <span className="text-slate-600">Segunda - Sexta</span>
@@ -122,7 +122,7 @@ export function Contact() {
             {sent ? (
               <div className="h-full flex flex-col items-center justify-center text-center p-12 rounded-2xl border border-emerald-200 bg-emerald-50">
                 <CheckCircle size={56} className="text-emerald-500 mb-4" />
-                <h3 className="text-2xl font-bold text-slate-900 mb-2">Mensagem Enviada!</h3>
+                <h3 className="text-2xl font-bold text-dark mb-2">Mensagem Enviada!</h3>
                 <p className="text-slate-600">
                   Obrigado pelo contacto. Responderemos em breve.
                 </p>
@@ -145,7 +145,7 @@ export function Contact() {
                       value={form.name}
                       onChange={handleChange}
                       placeholder="O seu nome"
-                      className="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 text-slate-900 placeholder-slate-400 text-sm focus:outline-none focus:border-brand-400 focus:bg-white focus:ring-2 focus:ring-brand-400/20 transition-all"
+                      className="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 text-dark placeholder-slate-400 text-sm focus:outline-none focus:border-brand-400 focus:bg-white focus:ring-2 focus:ring-brand-400/20 transition-all"
                     />
                   </div>
                   <div>
@@ -158,7 +158,7 @@ export function Contact() {
                       value={form.email}
                       onChange={handleChange}
                       placeholder="seu@email.com"
-                      className="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 text-slate-900 placeholder-slate-400 text-sm focus:outline-none focus:border-brand-400 focus:bg-white focus:ring-2 focus:ring-brand-400/20 transition-all"
+                      className="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 text-dark placeholder-slate-400 text-sm focus:outline-none focus:border-brand-400 focus:bg-white focus:ring-2 focus:ring-brand-400/20 transition-all"
                     />
                   </div>
                 </div>
@@ -173,7 +173,7 @@ export function Contact() {
                       value={form.company}
                       onChange={handleChange}
                       placeholder="Nome da empresa"
-                      className="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 text-slate-900 placeholder-slate-400 text-sm focus:outline-none focus:border-brand-400 focus:bg-white focus:ring-2 focus:ring-brand-400/20 transition-all"
+                      className="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 text-dark placeholder-slate-400 text-sm focus:outline-none focus:border-brand-400 focus:bg-white focus:ring-2 focus:ring-brand-400/20 transition-all"
                     />
                   </div>
                   <div>
@@ -184,7 +184,7 @@ export function Contact() {
                       name="subject"
                       value={form.subject}
                       onChange={handleChange}
-                      className="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 text-slate-900 text-sm focus:outline-none focus:border-brand-400 focus:bg-white focus:ring-2 focus:ring-brand-400/20 transition-all appearance-none cursor-pointer"
+                      className="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 text-dark text-sm focus:outline-none focus:border-brand-400 focus:bg-white focus:ring-2 focus:ring-brand-400/20 transition-all appearance-none cursor-pointer"
                     >
                       <option value="">Seleccione...</option>
                       <option value="web">Desenvolvimento Web</option>
@@ -207,7 +207,7 @@ export function Contact() {
                     onChange={handleChange}
                     placeholder="Descreva o seu projecto ou necessidade..."
                     rows={5}
-                    className="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 text-slate-900 placeholder-slate-400 text-sm focus:outline-none focus:border-brand-400 focus:bg-white focus:ring-2 focus:ring-brand-400/20 transition-all resize-none"
+                    className="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 text-dark placeholder-slate-400 text-sm focus:outline-none focus:border-brand-400 focus:bg-white focus:ring-2 focus:ring-brand-400/20 transition-all resize-none"
                   />
                 </div>
 

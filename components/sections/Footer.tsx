@@ -16,7 +16,7 @@ export function Footer() {
   }
 
   return (
-    <footer className="bg-slate-900 border-t border-slate-800">
+    <footer className="bg-dark border-t border-brand-900/20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
           {/* Brand */}
@@ -57,7 +57,7 @@ export function Footer() {
           ))}
         </div>
 
-        <div className="mt-12 pt-6 border-t border-slate-800 flex flex-col sm:flex-row items-center justify-between gap-4">
+        <div className="mt-12 pt-6 border-t border-brand-900/20 flex flex-col sm:flex-row items-center justify-between gap-4">
           <p className="text-slate-500 text-xs">
             © {new Date().getFullYear()} Click 3.4. Todos os direitos reservados.
           </p>

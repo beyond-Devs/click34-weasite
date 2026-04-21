@@ -18,10 +18,10 @@ export function Hero() {
       {/* Gradient mesh background */}
       <div className="absolute inset-0 pointer-events-none">
         {/* Main mesh gradient */}
-        <div className="absolute inset-0 bg-gradient-to-br from-brand-50 via-white to-blue-50/60" />
+        <div className="absolute inset-0 bg-gradient-to-br from-brand-50 via-white to-brand-50/60" />
         {/* Radial glows */}
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[500px] rounded-full bg-brand-400/12 blur-[100px]" />
-        <div className="absolute top-1/4 right-1/4 w-[300px] h-[300px] rounded-full bg-blue-400/10 blur-[80px]" />
+        <div className="absolute top-1/4 right-1/4 w-[300px] h-[300px] rounded-full bg-brand-400/10 blur-[80px]" />
         <div className="absolute bottom-1/3 left-1/5 w-[250px] h-[250px] rounded-full bg-brand-300/10 blur-[70px]" />
       </div>
 
@@ -33,13 +33,13 @@ export function Hero() {
         >
           <defs>
             <pattern id="circuit" x="0" y="0" width="100" height="100" patternUnits="userSpaceOnUse">
-              <path d="M0 50 H40 M60 50 H100" stroke="#1a5fb4" strokeWidth="0.9" fill="none"/>
-              <path d="M50 0 V40 M50 60 V100" stroke="#1a5fb4" strokeWidth="0.9" fill="none"/>
-              <path d="M40 50 Q50 50 50 40" stroke="#1a5fb4" strokeWidth="0.9" fill="none"/>
-              <circle cx="50" cy="50" r="3" fill="none" stroke="#1a5fb4" strokeWidth="0.9"/>
-              <circle cx="0" cy="50" r="1.5" fill="#1a5fb4"/>
-              <circle cx="100" cy="50" r="1.5" fill="#1a5fb4"/>
-              <circle cx="50" cy="0" r="1.5" fill="#1a5fb4"/>
+              <path d="M0 50 H40 M60 50 H100" stroke="#161F64" strokeWidth="0.9" fill="none"/>
+              <path d="M50 0 V40 M50 60 V100" stroke="#161F64" strokeWidth="0.9" fill="none"/>
+              <path d="M40 50 Q50 50 50 40" stroke="#161F64" strokeWidth="0.9" fill="none"/>
+              <circle cx="50" cy="50" r="3" fill="none" stroke="#161F64" strokeWidth="0.9"/>
+              <circle cx="0" cy="50" r="1.5" fill="#161F64"/>
+              <circle cx="100" cy="50" r="1.5" fill="#161F64"/>
+              <circle cx="50" cy="0" r="1.5" fill="#161F64"/>
             </pattern>
           </defs>
           <rect width="100%" height="100%" fill="url(#circuit)"/>
@@ -77,7 +77,7 @@ export function Hero() {
 
         {/* Headline */}
         <h1
-          className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black text-slate-900 mb-6 leading-[1.1]"
+          className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black text-dark mb-6 leading-[1.1]"
           style={{ animation: 'fadeUp 0.6s ease 0.25s both' }}
         >
           Transforme sua{' '}
