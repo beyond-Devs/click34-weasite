@@ -1,6 +1,7 @@
 'use client'
 import React from 'react'
-import { Logo } from '@/components/ui/Logo'
+import Image from 'next/image'
+import Logotipo from '@/assets/Logotipo.png'
 import { Phone, Mail, MapPin, Heart } from 'lucide-react'
 
 const footerLinks = {
@@ -20,8 +21,7 @@ export function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
           {/* Brand */}
           <div className="lg:col-span-2">
-            <Logo size="md" dark />
-            <p className="text-slate-400 text-sm leading-relaxed mt-4 max-w-sm">
+            <p className="text-slate-400 text-sm leading-relaxed max-w-sm">
               Transformamos a sua visão digital em realidade. Soluções tecnológicas inovadoras
               para impulsionar negócios em Angola e além fronteiras.
             </p>

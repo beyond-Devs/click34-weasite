@@ -1,9 +1,11 @@
 'use client'
 import React, { useState, useEffect } from 'react'
-import { Logo } from '@/components/ui/Logo'
+import Image from 'next/image'
+import Logotipo from '@/assets/Logo_blue.png'
 import { Button } from '@/components/ui/Button'
 import { Menu, X } from 'lucide-react'
 import { cn } from '@/lib/utils'
+import { Logo } from '../ui/Logo'
 
 const navLinks = [
   { label: 'Início',       href: '#hero' },
@@ -71,9 +73,16 @@ export function Navbar() {
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-20">
-          <button onClick={() => scrollTo('#hero')}>
-            <Logo size="md" />
-          </button>
+        <button onClick={() => scrollTo('#hero')} className="flex items-center">
+          <Image 
+            src={Logotipo}
+            alt="Click 3.4 Logo"
+            width={110}
+            height={30}
+            className="h-10 w-auto object-contain"
+            priority
+          />
+        </button>
 
           {/* Desktop Nav */}
           <nav className="hidden md:flex items-center gap-1">
