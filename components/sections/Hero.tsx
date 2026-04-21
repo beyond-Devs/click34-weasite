@@ -1,6 +1,7 @@
 'use client'
 import React, { useEffect, useRef } from 'react'
 import { ArrowRight, TrendingUp, BarChart2, Globe } from 'lucide-react'
+import { AngolaMap } from '../ui/AngolaMap';
 
 /* ─── Brand palette ─────────────────────────────────────────────── */
 const C = {
@@ -212,11 +213,13 @@ export function Hero() {
       <div
         className="sm:hidden flex flex-col gap-[10px]"
        style={{
-        position:'absolute', right:'2.5%', top:'50%', transform:'translateY(-50%)',
+        position:'absolute', right:'0%', top:'50%', transform:'translateY(-50%)',
         display:'flex', flexDirection:'column', gap:10, zIndex:5,
         pointerEvents:'none',
+        width: 700,
+        height: 'auto'
       }}>
-        {DATA_CARDS.map((c, i) => (
+        {/* {DATA_CARDS.map((c, i) => (
           <div key={c.label} style={{
             background:'rgba(255,255,255,0.92)',
             backdropFilter:'blur(14px)',
@@ -256,7 +259,6 @@ export function Hero() {
           </div>
         ))}
 
-        {/* Mini map */}
         <div style={{
           background:'rgba(255,255,255,0.92)',
           backdropFilter:'blur(14px)',
@@ -284,7 +286,8 @@ export function Hero() {
           <div style={{fontSize:10,color:C.muted,fontFamily:"'DM Mono',monospace",marginTop:4}}>
             {MAP_DOTS.length} active markets
           </div>
-        </div>
+        </div> */}
+        <AngolaMap />
       </div>
 
       {/* ── Main text — left-anchored ── */}
@@ -350,6 +353,7 @@ export function Hero() {
               cursor:'pointer', boxShadow:`0 8px 26px rgba(21,31,89,0.30)`,
               transition:'transform .14s, box-shadow .14s',
             }}
+            className='rounded-full'
             onMouseEnter={e => {
               const b = e.currentTarget as HTMLButtonElement
               b.style.transform='translateY(-2px)'
