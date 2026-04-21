@@ -11,7 +11,8 @@ const navLinks = [
   { label: 'Início',       href: '#hero' },
   { label: 'Serviços',     href: '#services' },
   { label: 'Sobre',        href: '#about' },
-  { label: 'Equipa',       href: '#team' },
+  { label: 'Projectos',    href: '#projects'},
+  /* { label: 'Equipa',       href: '#team' }, */
   { label: 'Testemunhos',  href: '#testimonials' },
   { label: 'Contacto',     href: '#contact' },
 ]
@@ -77,9 +78,9 @@ export function Navbar() {
           <Image 
             src={Logotipo}
             alt="Click 3.4 Logo"
-            width={110}
-            height={30}
-            className="h-10 w-auto object-contain"
+            width={100}
+            height={20}
+            className="h-8 w-auto object-contain"
             priority
           />
         </button>
