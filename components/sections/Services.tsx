@@ -54,7 +54,6 @@ const services = [
 export function Services() {
   return (
     <section id="services" className="py-24 bg-surface-2 relative overflow-hidden">
-      {/* Subtle dot pattern */}
       <div
         className="absolute inset-0 opacity-40 pointer-events-none"
         style={{

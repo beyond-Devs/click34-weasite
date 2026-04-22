@@ -83,11 +83,9 @@ export function Testimonials() {
           subtitle="A confiança dos nossos clientes é o nosso maior troféu. Veja o impacto real das nossas soluções."
         />
 
-        {/* Cards */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-10">
           {visible.map((t) => (
             <Card key={t.name + current} hover className="relative">
-              {/* Quote icon */}
               <Quote
                 size={36}
                 className="absolute top-5 right-5 text-brand-200"
@@ -114,7 +112,6 @@ export function Testimonials() {
           ))}
         </div>
 
-        {/* Navigation */}
         <div className="flex items-center justify-center gap-4">
           <button
             onClick={prev}
@@ -124,7 +121,6 @@ export function Testimonials() {
             <ChevronLeft size={20} />
           </button>
 
-          {/* Dots */}
           <div className="flex gap-2">
             {testimonials.slice(0, testimonials.length - perPage + 1).map((_, i) => (
               <button

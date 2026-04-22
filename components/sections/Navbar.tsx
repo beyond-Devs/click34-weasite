@@ -26,10 +26,9 @@ export function Navbar() {
     const onScroll = () => setScrolled(window.scrollY > 20)
     window.addEventListener('scroll', onScroll)
 
-    // Intersection Observer for Scroll Spy
     const observerOptions = {
       root: null,
-      rootMargin: '-20% 0px -70% 0px', // Adjust these values to control when a section becomes active
+      rootMargin: '-20% 0px -70% 0px',
       threshold: 0,
     }
 
@@ -43,7 +42,6 @@ export function Navbar() {
 
     const observer = new IntersectionObserver(observerCallback, observerOptions)
 
-    // Observe all sections that have an ID corresponding to nav links
     navLinks.forEach((link) => {
       const id = link.href.substring(1)
       const element = document.getElementById(id)
@@ -85,7 +83,6 @@ export function Navbar() {
           />
         </button>
 
-          {/* Desktop Nav */}
           <nav className="hidden md:flex items-center gap-1">
             {navLinks.map(link => (
               <button
@@ -109,7 +106,6 @@ export function Navbar() {
             </Button>
           </div>
 
-          {/* Mobile toggle */}
           <button
             className="md:hidden text-slate-600 hover:text-dark p-2"
             onClick={() => setMobileOpen(o => !o)}
@@ -119,7 +115,6 @@ export function Navbar() {
         </div>
       </div>
 
-      {/* Mobile menu */}
       <div
         className={cn(
           'md:hidden overflow-hidden transition-all duration-300',

@@ -1,9 +1,9 @@
 'use client'
-import React, { useEffect, useRef } from 'react'
+
+import React, { useEffect, useRef, useState } from 'react'
 import { ArrowRight, TrendingUp, BarChart2, Globe } from 'lucide-react'
 import { AngolaMap } from '../ui/AngolaMap';
 
-/* ─── Brand palette ─────────────────────────────────────────────── */
 const C = {
   navy:    '#151F59',
   navyDk:  '#161F64',
@@ -15,12 +15,26 @@ const C = {
   gridLine:'rgba(21,31,89,0.06)',
 }
 
-/* ─── Network canvas animation ──────────────────────────────────── */
 interface Particle {
   x: number; y: number
   vx: number; vy: number
   r: number
   color: string
+}
+
+function GlobalStyles() {
+  const [mounted, setMounted] = useState(false)
+  useEffect(() => { setMounted(true) }, [])
+  if (!mounted) return null
+  return (
+    <style dangerouslySetInnerHTML={{ __html: `
+      @import url('https://fonts.googleapis.com/css2?family=Sora:wght@300;400;600;700;800&family=DM+Mono:wght@400;500&display=swap');
+      @keyframes fadeUp    { from{opacity:0;transform:translateY(22px)} to{opacity:1;transform:none} }
+      @keyframes pulseRing { 0%{r:6;opacity:.55} 100%{r:26;opacity:0} }
+      @keyframes blink     { 0%,100%{opacity:1}  50%{opacity:.2} }
+      @keyframes lineGrow  { from{stroke-dashoffset:220} to{stroke-dashoffset:0} }
+    ` }} />
+  )
 }
 
 function NetworkCanvas() {
@@ -60,7 +74,6 @@ function NetworkCanvas() {
     const draw = () => {
       ctx.clearRect(0, 0, W, H)
 
-      // Update positions
       for (const p of particles) {
         p.x += p.vx
         p.y += p.vy
@@ -70,7 +83,6 @@ function NetworkCanvas() {
         if (p.y > H + 20) p.y = -20
       }
 
-      // Draw lines
       for (let i = 0; i < particles.length; i++) {
         for (let j = i + 1; j < particles.length; j++) {
           const a = particles[i], b = particles[j]
@@ -88,10 +100,8 @@ function NetworkCanvas() {
         }
       }
 
-      // Draw dots
       for (const p of particles) {
         const isLarge = p.r > 3
-        // outer glow ring for large dots
         if (isLarge) {
           ctx.beginPath()
           ctx.arc(p.x, p.y, p.r + 5, 0, Math.PI * 2)
@@ -134,7 +144,6 @@ function NetworkCanvas() {
   )
 }
 
-/* ─── Sparkline helper ──────────────────────────────────────────── */
 const spark = (vals: number[], w = 116, h = 28) => {
   const min = Math.min(...vals), max = Math.max(...vals)
   return vals.map((v, i) => {
@@ -144,24 +153,6 @@ const spark = (vals: number[], w = 116, h = 28) => {
   }).join(' ')
 }
 
-/* ─── Data ──────────────────────────────────────────────────────── */
-const DATA_CARDS = [
-  { label:'GDP Growth',   region:'Sub-Saharan', value:'+6.2%', trend:'+0.8%', up:true,  vals:[3,4,3.5,5,4.8,6,5.5,6.2]     },
-  { label:'Active Users', region:'East Africa', value:'2.4M',  trend:'+12%',  up:true,  vals:[1,1.2,1.5,1.4,1.8,2,2.2,2.4] },
-  { label:'Transactions', region:'West Africa', value:'18.7B', trend:'-1.2%', up:false, vals:[22,20,19,21,18,19,18.5,18.7]  },
-]
-
-const MAP_DOTS = [
-  { cx:50, cy:32, r:4,   label:'Lagos'         },
-  { cx:57, cy:55, r:3.5, label:'Nairobi'       },
-  { cx:36, cy:42, r:3,   label:'Accra'         },
-  { cx:55, cy:72, r:4,   label:'Johannesburg'  },
-  { cx:42, cy:20, r:2.5, label:'Dakar'         },
-  { cx:66, cy:45, r:3,   label:'Dar es Salaam' },
-  { cx:46, cy:64, r:2.5, label:'Lusaka'        },
-]
-
-/* ─── Hero ──────────────────────────────────────────────────────── */
 export function Hero() {
   const scrollTo = (href: string) => {
     const el = document.querySelector(href)
@@ -175,25 +166,15 @@ export function Hero() {
       overflow:'hidden', background:C.paper,
       fontFamily:"'Sora',sans-serif",
     }}>
+      <GlobalStyles />
 
-      <style>{`
-        @import url('https://fonts.googleapis.com/css2?family=Sora:wght@300;400;600;700;800&family=DM+Mono:wght@400;500&display=swap');
-        @keyframes fadeUp    { from{opacity:0;transform:translateY(22px)} to{opacity:1;transform:none} }
-        @keyframes pulseRing { 0%{r:6;opacity:.55} 100%{r:26;opacity:0} }
-        @keyframes blink     { 0%,100%{opacity:1}  50%{opacity:.2} }
-        @keyframes lineGrow  { from{stroke-dashoffset:220} to{stroke-dashoffset:0} }
-      `}</style>
-
-      {/* ── Animated network background ── */}
       <NetworkCanvas />
 
-      {/* ── Subtle top gradient wash so text is readable ── */}
       <div style={{
         position:'absolute', inset:0, pointerEvents:'none',
         background:`radial-gradient(ellipse 70% 60% at 28% 50%, rgba(246,247,251,0.72) 0%, transparent 80%)`,
       }}/>
 
-      {/* ── Ambient glow ── */}
       <div style={{position:'absolute',inset:0,pointerEvents:'none'}}>
         <div style={{
           position:'absolute', top:'20%', left:'10%',
@@ -209,88 +190,18 @@ export function Hero() {
         }}/>
       </div>
 
-      {/* ── Floating data cards ── */}
       <div
-        className="sm:hidden flex flex-col gap-[10px]"
-       style={{
-        position:'absolute', right:'0%', top:'50%', transform:'translateY(-50%)',
-        display:'flex', flexDirection:'column', gap:10, zIndex:5,
-        pointerEvents:'none',
-        width: 700,
-        height: 'auto'
-      }}>
-        {/* {DATA_CARDS.map((c, i) => (
-          <div key={c.label} style={{
-            background:'rgba(255,255,255,0.92)',
-            backdropFilter:'blur(14px)',
-            border:`1px solid rgba(21,31,89,0.10)`,
-            borderLeft:`3px solid ${c.up ? C.navy : C.amber}`,
-            borderRadius:10, padding:'9px 13px', width:186,
-            boxShadow:'0 3px 22px rgba(21,31,89,0.08)',
-            animation:`fadeUp .45s ease ${0.85 + i * 0.14}s both`,
-          }}>
-            <div style={{display:'flex',justifyContent:'space-between',alignItems:'flex-start'}}>
-              <div>
-                <div style={{fontSize:9.5,color:C.muted,textTransform:'uppercase',letterSpacing:'0.07em',fontFamily:"'DM Mono',monospace"}}>
-                  {c.region}
-                </div>
-                <div style={{fontSize:11,color:C.ink,fontWeight:600,marginTop:1}}>{c.label}</div>
-              </div>
-              <div style={{fontSize:13,fontWeight:700,color:c.up?C.navy:C.amber,fontFamily:"'DM Mono',monospace"}}>
-                {c.value}
-              </div>
-            </div>
-            <svg width="116" height="26" style={{display:'block',margin:'7px 0 3px'}}>
-              <polyline
-                points={spark(c.vals)}
-                fill="none" stroke={c.up ? C.navy : C.amber}
-                strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"
-                style={{strokeDasharray:220, animation:`lineGrow 1.1s ease ${1.05+i*.14}s both`}}
-              />
-              <circle
-                cx={(116/(c.vals.length-1))*(c.vals.length-1)}
-                cy={26-((c.vals[c.vals.length-1]-Math.min(...c.vals))/(Math.max(...c.vals)-Math.min(...c.vals)||1))*26}
-                r="2.5" fill={c.up?C.navy:C.amber}
-              />
-            </svg>
-            <div style={{fontSize:9.5,color:c.up?C.navy:C.amber,fontFamily:"'DM Mono',monospace",fontWeight:500}}>
-              {c.trend} this qtr
-            </div>
-          </div>
-        ))}
+  className="hidden sm:flex flex-col gap-[10px]"
+  style={{
+    position:'absolute', right:'0%', top:'50%', transform:'translateY(-50%)',
+    flexDirection:'column', gap:10, zIndex:5,
+    pointerEvents:'none',
+    width: 700,
+    height: 'auto'
+  }}>
+  <AngolaMap />
+</div>
 
-        <div style={{
-          background:'rgba(255,255,255,0.92)',
-          backdropFilter:'blur(14px)',
-          border:`1px solid rgba(21,31,89,0.10)`,
-          borderRadius:10, padding:'10px 13px', width:186,
-          boxShadow:'0 3px 22px rgba(21,31,89,0.08)',
-          animation:`fadeUp .45s ease 1.28s both`, marginTop:2,
-        }}>
-          <div style={{display:'flex',justifyContent:'space-between',alignItems:'center',marginBottom:7}}>
-            <span style={{fontSize:11,fontWeight:600,color:C.ink}}>Live Coverage</span>
-            <span style={{width:7,height:7,borderRadius:'50%',background:'#22c55e',display:'inline-block',animation:'blink 1.4s infinite'}}/>
-          </div>
-          <svg viewBox="0 0 100 82" style={{width:'100%'}}>
-            <ellipse cx="47" cy="40" rx="27" ry="33" fill={`rgba(21,31,89,0.05)`} stroke={`rgba(21,31,89,0.18)`} strokeWidth="1.2"/>
-            <path d="M70 28 Q81 33 78 44 Q73 47 68 41" fill={`rgba(21,31,89,0.05)`} stroke={`rgba(21,31,89,0.18)`} strokeWidth="1.2"/>
-            <path d="M41 71 L47 81 L53 71" fill={`rgba(21,31,89,0.05)`} stroke={`rgba(21,31,89,0.18)`} strokeWidth="1.2"/>
-            {MAP_DOTS.map((d, i) => (
-              <React.Fragment key={d.label}>
-                <circle cx={d.cx} cy={d.cy} r={d.r+7} fill="none" stroke={C.navy} strokeWidth="0.7" opacity="0.22"
-                  style={{animation:`pulseRing 3s ${i*.44}s ease-out infinite`,transformOrigin:`${d.cx}px ${d.cy}px`}}/>
-                <circle cx={d.cx} cy={d.cy} r={d.r} fill={C.navy} opacity="0.75"/>
-              </React.Fragment>
-            ))}
-          </svg>
-          <div style={{fontSize:10,color:C.muted,fontFamily:"'DM Mono',monospace",marginTop:4}}>
-            {MAP_DOTS.length} active markets
-          </div>
-        </div> */}
-        <AngolaMap />
-      </div>
-
-      {/* ── Main text — left-anchored ── */}
       <div style={{
         position:'relative', zIndex:10,
         maxWidth:640,
@@ -300,22 +211,6 @@ export function Hero() {
         paddingBottom:40,
       }}>
 
-        {/* Eyebrow */}
-        {/* <div style={{animation:'fadeUp .5s ease .08s both', marginBottom:22}}>
-          <span style={{
-            display:'inline-flex', alignItems:'center', gap:7,
-            background:`rgba(21,31,89,0.07)`, border:`1px solid rgba(21,31,89,0.16)`,
-            borderRadius:100, padding:'5px 14px',
-            fontSize:11, fontWeight:600, color:C.navy,
-            letterSpacing:'0.07em', textTransform:'uppercase',
-            fontFamily:"'DM Mono',monospace",
-          }}>
-            <span style={{width:7,height:7,borderRadius:'50%',background:C.navy,animation:'blink 1.4s infinite'}}/>
-            Análise de Dados · África
-          </span>
-        </div> */}
-
-        {/* H1 */}
         <h1 style={{
           margin:'0 0 18px',
           fontSize:'clamp(2.2rem, 4.6vw, 3.7rem)',
@@ -331,7 +226,6 @@ export function Hero() {
           <span style={{color:C.amber}}></span>
         </h1>
 
-        {/* Subtitle */}
         <p style={{
           fontSize:'1.02rem', color:C.muted, lineHeight:1.75,
           maxWidth:490, margin:'0 0 34px',
@@ -342,7 +236,6 @@ export function Hero() {
           geo-contextuais e relatórios preditivos.
         </p>
 
-        {/* CTAs */}
         <div style={{display:'flex',flexWrap:'wrap',gap:12,animation:'fadeUp .5s ease .52s both'}}>
           <button
             onClick={() => scrollTo('#services')}

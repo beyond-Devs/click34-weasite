@@ -60,7 +60,6 @@ export function Team() {
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {team.map((member) => (
             <Card key={member.name} hover className="group text-center">
-              {/* Avatar */}
               <div className="relative mx-auto mb-4 w-20 h-20">
                 <div
                   className={`w-20 h-20 rounded-2xl bg-gradient-to-br ${member.gradient} flex items-center justify-center text-white text-2xl font-bold shadow-lg shadow-brand-500/20 group-hover:shadow-brand-500/35 transition-shadow duration-300`}
@@ -70,7 +69,6 @@ export function Team() {
                 <div className="absolute -bottom-1 -right-1 w-4 h-4 rounded-full bg-emerald-400 border-2 border-white shadow-sm" />
               </div>
 
-              {/* Info */}
               <h3 className="font-bold text-dark group-hover:text-brand-600 transition-colors">
                 {member.name}
               </h3>
@@ -79,7 +77,6 @@ export function Team() {
               </p>
               <p className="text-slate-500 text-xs leading-relaxed mb-4">{member.bio}</p>
 
-              {/* Socials */}
               <div className="flex items-center justify-center gap-3">
                 {member.socials.linkedin && (
                   <a

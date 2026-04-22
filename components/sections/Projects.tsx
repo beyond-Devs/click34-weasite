@@ -2,18 +2,12 @@
 import React, { useState } from 'react'
 import { ExternalLink, Github, ArrowRight, Layers } from 'lucide-react'
 
-// ─── Brand colors ─────────────────────────────────────────────────────────────
-// Primary dark navy : #151F59  /  #161F64
-// Accent highlight  : derived lighter tints for tags, hovers, etc.
-// Text              : #000000 (body)  |  #ffffff (on dark surfaces)
-// ──────────────────────────────────────────────────────────────────────────────
-
 interface Project {
   title: string
   description: string
   category: string
   tags: string[]
-  image: string          // URL or placeholder gradient
+  image: string          
   liveUrl?: string
   repoUrl?: string
   featured?: boolean
@@ -82,7 +76,6 @@ const PROJECTS: Project[] = [
 
 const CATEGORIES = ['Todos', ...Array.from(new Set(PROJECTS.map(p => p.category)))]
 
-// Gradient covers per index (used when no real image is provided)
 const COVERS = [
   'linear-gradient(135deg, #151F59 0%, #2a3a9e 100%)',
   'linear-gradient(135deg, #161F64 0%, #0e4fa3 100%)',
@@ -92,7 +85,6 @@ const COVERS = [
   'linear-gradient(135deg, #161F64 0%, #151F59 60%, #000000 100%)',
 ]
 
-// Circuit SVG overlay inside each card cover
 function CircuitOverlay() {
   return (
     <svg
@@ -134,7 +126,6 @@ export function Projects() {
         backgroundSize: '50px 50px',
       }}
     >
-      {/* Decorative blob */}
       <div
         className="absolute top-0 right-0 w-[480px] h-[480px] rounded-full pointer-events-none"
         style={{
@@ -151,8 +142,6 @@ export function Projects() {
       />
 
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-
-        {/* ── Section header ── */}
         <div className="text-center mb-14">
           <span
             className="inline-flex items-center gap-2 px-3 py-1 text-xs font-bold uppercase tracking-wider rounded-full mb-4"
@@ -187,7 +176,6 @@ export function Projects() {
           </p>
         </div>
 
-        {/* ── Filter tabs ── */}
         <div className="flex flex-wrap justify-center gap-2 mb-12">
           {CATEGORIES.map(cat => {
             const isActive = cat === activeCategory
@@ -226,14 +214,12 @@ export function Projects() {
           })}
         </div>
 
-        {/* ── Project grid ── */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {filtered.map((project, index) => (
             <ProjectCard key={project.title} project={project} index={index} />
           ))}
         </div>
 
-        {/* ── CTA ── */}
         <div className="text-center mt-14">
           <p className="text-slate-500 text-sm mb-4">
             Tem um projecto em mente? Vamos conversar.
@@ -258,7 +244,6 @@ export function Projects() {
   )
 }
 
-// ─── Individual project card ───────────────────────────────────────────────────
 function ProjectCard({ project, index }: { project: Project; index: number }) {
   const [hovered, setHovered] = useState(false)
 
@@ -279,11 +264,9 @@ function ProjectCard({ project, index }: { project: Project; index: number }) {
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
     >
-      {/* Cover */}
       <div className="relative h-48 overflow-hidden" style={coverStyle}>
         <CircuitOverlay />
 
-        {/* Featured badge */}
         {project.featured && (
           <div className="absolute top-3 left-3 z-10">
             <span
@@ -295,7 +278,6 @@ function ProjectCard({ project, index }: { project: Project; index: number }) {
           </div>
         )}
 
-        {/* Hover overlay with links */}
         <div
           className="absolute inset-0 flex items-center justify-center gap-3 z-10 transition-all duration-300"
           style={{
@@ -328,7 +310,6 @@ function ProjectCard({ project, index }: { project: Project; index: number }) {
           )}
         </div>
 
-        {/* Category pill */}
         <div className="absolute bottom-3 right-3 z-10">
           <span
             className="px-2.5 py-1 text-[10px] font-semibold rounded-full"
@@ -339,7 +320,6 @@ function ProjectCard({ project, index }: { project: Project; index: number }) {
         </div>
       </div>
 
-      {/* Body */}
       <div className="p-5 flex flex-col flex-1">
         <h3
           className="font-bold text-base mb-2 transition-colors duration-200"
@@ -351,7 +331,6 @@ function ProjectCard({ project, index }: { project: Project; index: number }) {
           {project.description}
         </p>
 
-        {/* Tags */}
         <div className="flex flex-wrap gap-2">
           {project.tags.map(tag => (
             <span

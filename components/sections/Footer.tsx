@@ -19,7 +19,6 @@ export function Footer() {
     <footer className="bg-dark border-t border-brand-900/20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
-          {/* Brand */}
           <div className="lg:col-span-2">
             <p className="text-slate-400 text-sm leading-relaxed max-w-sm">
               Transformamos a sua visão digital em realidade. Soluções tecnológicas inovadoras

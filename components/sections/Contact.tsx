@@ -45,7 +45,6 @@ export function Contact() {
 
   return (
     <section id="contact" className="py-24 bg-surface-2 relative overflow-hidden">
-      {/* Dot grid */}
       <div
         className="absolute inset-0 opacity-35 pointer-events-none"
         style={{
@@ -63,7 +62,6 @@ export function Contact() {
         />
 
         <div className="grid grid-cols-1 lg:grid-cols-5 gap-12">
-          {/* Left: info */}
           <div className="lg:col-span-2 space-y-6">
             <div>
               <h3 className="text-xl font-bold text-dark mb-2">Fale connosco</h3>
@@ -73,7 +71,6 @@ export function Contact() {
               </p>
             </div>
 
-            {/* Contact info cards */}
             <div className="space-y-3">
               {contactInfo.map(info => {
                 const Icon = info.icon
@@ -97,7 +94,6 @@ export function Contact() {
               })}
             </div>
 
-            {/* Working hours */}
             <div className="p-5 rounded-2xl border border-brand-200 bg-gradient-to-br from-brand-50 to-brand-50">
               <h4 className="text-dark font-semibold mb-3">Horário de Atendimento</h4>
               <div className="space-y-2 text-sm">
@@ -117,7 +113,6 @@ export function Contact() {
             </div>
           </div>
 
-          {/* Right: form */}
           <div className="lg:col-span-3">
             {sent ? (
               <div className="h-full flex flex-col items-center justify-center text-center p-12 rounded-2xl border border-emerald-200 bg-emerald-50">
