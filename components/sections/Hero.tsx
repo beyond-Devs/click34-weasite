@@ -162,7 +162,7 @@ export function Hero() {
   return (
     <section id="hero" style={{
       position:'relative', minHeight:'100vh',
-      display:'flex', alignItems:'center',
+      display:'flex', alignItems:'flex-start', paddingTop:'12vh',
       overflow:'hidden', background:C.paper,
       fontFamily:"'Sora',sans-serif",
     }}>
@@ -193,7 +193,7 @@ export function Hero() {
       <div
   className="hidden lg:flex flex-col gap-[10px]"
   style={{
-    position:'absolute', right:'0%', top:'50%', transform:'translateY(-50%)',
+    position:'absolute', right:'0%', top:'50%', transform:'translateY(-58%)',
     flexDirection:'column', gap:10, zIndex:5,
     pointerEvents:'none',
     width: 700,
@@ -207,8 +207,8 @@ export function Hero() {
         maxWidth:640,
         paddingLeft:'clamp(28px, 6vw, 80px)',
         paddingRight:24,
-        paddingTop:20,
-        paddingBottom:40,
+        paddingTop:0,
+        paddingBottom:80,
       }}>
 
         <h1 style={{
@@ -282,25 +282,37 @@ export function Hero() {
           </button>
         </div>
 
-        {/* Stats */}
+        {/* Pilares */}
         <div style={{
-          marginTop:50, display:'flex', flexWrap:'wrap', gap:'26px 42px',
+          marginTop:50, display:'flex', flexWrap:'wrap', gap:'16px 28px',
           animation:'fadeUp .5s ease .67s both',
         }}>
           {[
-            { icon:<TrendingUp size={14}/>, value:'Data',   label:'Science & Analytics' },
-            { icon:<BarChart2 size={14}/>,  value:'W-Agile',label:'Metodologia ágil'    },
-            { icon:<Globe size={14}/>,      value:'Gov.',   label:'Governança Digital'  },
+            { icon:<TrendingUp size={16}/>, value:'Data Science', label:'& Analytics',       bg:'#151F59' },
+            { icon:<BarChart2  size={16}/>, value:'W-Agile',      label:'Metodologia ágil',  bg:'#E07B39' },
+            { icon:<Globe      size={16}/>, value:'Gov.',         label:'Governança Digital', bg:'#0e3d8a' },
           ].map(s => (
-            <div key={s.label}>
+            <div key={s.label} style={{ display:'flex', alignItems:'center', gap:12 }}>
               <div style={{
-                display:'flex', alignItems:'center', gap:6,
-                color:C.navy, fontFamily:"'DM Mono',monospace",
-                fontSize:'1.5rem', fontWeight:700, letterSpacing:'-0.04em',
+                width:40, height:40, borderRadius:'50%',
+                background:s.bg,
+                display:'flex', alignItems:'center', justifyContent:'center',
+                flexShrink:0,
+                boxShadow:`0 4px 14px rgba(21,31,89,0.28)`,
               }}>
-                {s.icon}{s.value}
+                <span style={{ color:'#fff', display:'flex' }}>{s.icon}</span>
               </div>
-              <div style={{fontSize:11,color:C.muted,marginTop:2,letterSpacing:'0.01em'}}>{s.label}</div>
+              <div>
+                <div style={{
+                  color:C.navy, fontFamily:"'DM Mono',monospace",
+                  fontSize:'0.82rem', fontWeight:700, letterSpacing:'-0.01em', lineHeight:1.2,
+                }}>
+                  {s.value}
+                </div>
+                <div style={{ fontSize:10.5, color:C.muted, letterSpacing:'0.01em', lineHeight:1.3 }}>
+                  {s.label}
+                </div>
+              </div>
             </div>
           ))}
         </div>
