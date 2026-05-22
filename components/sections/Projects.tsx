@@ -156,7 +156,7 @@ export function Projects() {
           </span>
           <h2
             className="text-4xl md:text-5xl font-bold mb-4 leading-tight"
-            style={{ fontFamily: 'Rajdhani, sans-serif', color: '#000000' }}
+            style={{ color: '#000000' }}
           >
             O nosso{' '}
             <span
