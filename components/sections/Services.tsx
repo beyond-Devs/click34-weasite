@@ -3,49 +3,49 @@ import React from 'react'
 import { Card } from '@/components/ui/Card'
 import { SectionTitle } from '@/components/ui/SectionTitle'
 import {
-  Globe, Smartphone, Cloud, Shield, Code2, BarChart3,
+  Brain, Code2, Shield, BarChart3, Cloud, Smartphone,
 } from 'lucide-react'
 
 const services = [
   {
-    icon: Globe,
-    title: 'Desenvolvimento Web',
-    desc: 'Sites e plataformas web modernas, responsivas e otimizadas para conversão, construídas com as melhores tecnologias do mercado.',
+    icon: Brain,
+    title: 'Data Science & Analytics',
+    desc: 'Desenvolvemos modelos avançados de análise de dados, scoring e previsão de comportamento: modelos preditivos, Score Njima, Business Intelligence e dashboards executivos.',
     color: 'from-brand-500 to-brand-600',
     bg: 'bg-brand-50',
   },
   {
-    icon: Smartphone,
-    title: 'Aplicações Mobile',
-    desc: 'Apps iOS e Android nativos e híbridos com interfaces intuitivas e experiências de utilizador excepcionais.',
+    icon: Code2,
+    title: 'Desenvolvimento de Software',
+    desc: 'Criamos soluções digitais escaláveis e integradas — arquitectura de sistemas modernos, microsserviços, APIs de integração e plataformas digitais personalizadas.',
     color: 'from-brand-400 to-brand-500',
     bg: 'bg-brand-50',
   },
   {
-    icon: Cloud,
-    title: 'Soluções Cloud',
-    desc: 'Infraestrutura escalável na nuvem que garante alta disponibilidade, segurança e performance para o seu negócio.',
-    color: 'from-brand-600 to-brand-700',
-    bg: 'bg-brand-50',
-  },
-  {
     icon: Shield,
-    title: 'Cibersegurança',
-    desc: 'Protecção avançada dos seus dados e sistemas com soluções de segurança de última geração e monitorização contínua.',
-    color: 'from-brand-400 to-brand-600',
-    bg: 'bg-brand-50',
-  },
-  {
-    icon: Code2,
-    title: 'Software à Medida',
-    desc: 'Desenvolvimento de software personalizado que automatiza processos e resolve os desafios específicos do seu negócio.',
-    color: 'from-brand-600 to-brand-500',
+    title: 'Compliance & Risco',
+    desc: 'Apoiamos organizações na conformidade regulatória: alinhamento com normas ARSEG e BNA, políticas digitais, gestão de risco operacional e auditoria tecnológica.',
+    color: 'from-brand-600 to-brand-700',
     bg: 'bg-brand-50',
   },
   {
     icon: BarChart3,
     title: 'Consultoria Digital',
-    desc: 'Estratégia e transformação digital completa — analisamos, planeamos e implementamos soluções que fazem crescer o seu negócio.',
+    desc: 'Estratégia e transformação digital orientada por dados — analisamos, planeamos e implementamos soluções que aceleram a evolução digital da sua organização.',
+    color: 'from-brand-400 to-brand-600',
+    bg: 'bg-brand-50',
+  },
+  {
+    icon: Cloud,
+    title: 'Soluções Cloud',
+    desc: 'Infraestrutura escalável na nuvem com alta disponibilidade, segurança e performance, desenhada para suportar o crescimento acelerado do seu negócio.',
+    color: 'from-brand-600 to-brand-500',
+    bg: 'bg-brand-50',
+  },
+  {
+    icon: Smartphone,
+    title: 'Aplicações Mobile',
+    desc: 'Apps iOS e Android nativos e híbridos com interfaces intuitivas, integração com sistemas de pagamento e experiências de utilizador excepcionais.',
     color: 'from-brand-500 to-brand-600',
     bg: 'bg-brand-50',
   },
@@ -65,9 +65,9 @@ export function Services() {
 
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <SectionTitle
-          badge="O que fazemos"
-          title="Serviços que impulsionam o seu negócio"
-          subtitle="Da concepção ao lançamento, entregamos soluções tecnológicas completas que transformam ideias em produtos digitais de sucesso."
+          badge="Serviços & Consultoria"
+          title="Soluções de alto impacto para a sua organização"
+          subtitle="Transformamos dados em decisões estratégicas, modernizamos processos e estruturamos sistemas tecnológicos seguros, escaláveis e orientados a resultados reais."
         />
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">

@@ -15,62 +15,59 @@ interface Project {
 
 const PROJECTS: Project[] = [
   {
-    title: 'Portal Corporativo Angola',
+    title: 'Wenzy — Ecossistema de Inclusão Financeira',
     description:
-      'Plataforma web corporativa com gestão de conteúdos, área de clientes e integração com sistemas de pagamento angolanos.',
-    category: 'Desenvolvimento Web',
-    tags: ['Next.js', 'TypeScript', 'TailwindCSS'],
-    image: '',
-    liveUrl: '#',
+      'Principal produto de impacto da Click 3.4. O Wenzy cria mecanismos que permitem estruturar a informalidade económica, convertendo atividades não formalizadas em ativos financeiros rastreáveis e integráveis no sistema económico formal.',
+    category: 'Data Science & Analytics',
+    tags: ['Inclusão Financeira', 'Data Science', 'Score Njima'],
+    image: 'https://images.unsplash.com/photo-1604328698692-f76ea9498e76?w=600&q=80',
+    liveUrl: 'https://wenzy.ao',
     featured: true,
   },
   {
-    title: 'App de Delivery Luanda',
+    title: 'Score Njima — Crédito & Risco',
     description:
-      'Aplicação mobile para encomendas e entregas em Luanda, com rastreamento em tempo real e sistema de pagamento integrado.',
-    category: 'Aplicação Mobile',
-    tags: ['React Native', 'Node.js', 'MongoDB'],
-    image: '',
-    liveUrl: '#',
-    repoUrl: '#',
+      'Modelo preditivo de scoring de risco e crédito desenvolvido para o contexto angolano, permitindo análise de comportamento financeiro e acesso a serviços de crédito para populações sub-bancarizadas.',
+    category: 'Data Science & Analytics',
+    tags: ['Machine Learning', 'Python', 'Risk Scoring'],
+    image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&q=80',
     featured: true,
   },
   {
-    title: 'Sistema ERP Industrial',
+    title: 'Plataforma de Formalização Económica',
     description:
-      'Software de gestão empresarial personalizado para empresa industrial angolana, cobrindo stock, RH e financeiro.',
-    category: 'Software à Medida',
-    tags: ['React', 'Django', 'PostgreSQL'],
-    image: '',
+      'Sistema que permite a formalização progressiva de atividades económicas informais, com geração de histórico financeiro confiável e integração com sistemas de pagamento.',
+    category: 'Desenvolvimento de Software',
+    tags: ['Next.js', 'Node.js', 'PostgreSQL'],
+    image: 'https://images.unsplash.com/photo-1687422808384-c896d0efd4ab?w=600&q=80',
     liveUrl: '#',
   },
   {
-    title: 'Plataforma E-commerce',
+    title: 'Dashboard Executivo BI',
     description:
-      'Loja online completa com catálogo de produtos, checkout seguro e dashboard de gestão de vendas para retalhista.',
-    category: 'Desenvolvimento Web',
-    tags: ['Next.js', 'Stripe', 'Prisma'],
-    image: '',
-    liveUrl: '#',
-    repoUrl: '#',
-  },
-  {
-    title: 'Dashboard Analytics',
-    description:
-      'Painel de análise de dados em tempo real com visualizações interativas e relatórios automáticos para executivos.',
-    category: 'Consultoria Digital',
+      'Painel de Business Intelligence em tempo real com visualizações interativas, relatórios automáticos e análise preditiva para tomada de decisão estratégica em organizações angolanas.',
+    category: 'Data Science & Analytics',
     tags: ['React', 'D3.js', 'Python'],
-    image: '',
+    image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600&q=80',
     liveUrl: '#',
   },
   {
-    title: 'Sistema de Segurança',
+    title: 'Sistema de Compliance Digital',
     description:
-      'Solução de cibersegurança com monitorização contínua, alertas automáticos e relatórios de compliance para banco.',
-    category: 'Cibersegurança',
-    tags: ['Python', 'Elasticsearch', 'Docker'],
-    image: '',
-    repoUrl: '#',
+      'Solução de governança digital alinhada com as normas ARSEG e BNA, com estruturação de políticas digitais, gestão de risco operacional e auditoria tecnológica para instituições financeiras.',
+    category: 'Compliance & Risco',
+    tags: ['Compliance', 'ARSEG', 'BNA'],
+    image: 'https://images.unsplash.com/photo-1563986768609-322da13575f3?w=600&q=80',
+    liveUrl: '#',
+  },
+  {
+    title: 'Arquitectura de Microsserviços',
+    description:
+      'Desenvolvimento de plataforma digital com arquitectura de microsserviços e APIs de integração para organização industrial angolana, cobrindo operações, stock e gestão financeira.',
+    category: 'Desenvolvimento de Software',
+    tags: ['Microsserviços', 'Docker', 'REST API'],
+    image: 'https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=600&q=80',
+    liveUrl: '#',
   },
 ]
 
@@ -167,12 +164,12 @@ export function Projects() {
                 backgroundClip: 'text',
               }}
             >
-              portfólio
+              ecossistema
             </span>
           </h2>
           <p className="text-slate-500 text-lg max-w-2xl mx-auto leading-relaxed">
-            Soluções reais entregues a clientes reais. Cada projecto é uma história de
-            transformação digital com impacto mensurável.
+            Projectos reais com impacto mensurável. Da inclusão financeira à governança digital,
+            cada solução é construída para transformar o contexto africano.
           </p>
         </div>
 

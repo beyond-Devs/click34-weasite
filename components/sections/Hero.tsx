@@ -191,7 +191,7 @@ export function Hero() {
       </div>
 
       <div
-  className="hidden sm:flex flex-col gap-[10px]"
+  className="hidden lg:flex flex-col gap-[10px]"
   style={{
     position:'absolute', right:'0%', top:'50%', transform:'translateY(-50%)',
     flexDirection:'column', gap:10, zIndex:5,
@@ -207,22 +207,22 @@ export function Hero() {
         maxWidth:640,
         paddingLeft:'clamp(28px, 6vw, 80px)',
         paddingRight:24,
-        paddingTop:40,
+        paddingTop:20,
         paddingBottom:40,
       }}>
 
         <h1 style={{
           margin:'0 0 18px',
-          fontSize:'clamp(2.2rem, 4.6vw, 3.7rem)',
+          fontSize:'clamp(1.6rem, 3.2vw, 2.6rem)',
           fontWeight:800, lineHeight:1.09,
           color:C.ink, letterSpacing:'-0.03em',
           animation:'fadeUp .5s ease .22s both',
         }}>
-          Transforme sua visão<br/>
+          Transformação Digital<br/>
           <span style={{
             background:`linear-gradient(118deg, ${C.navy} 20%, #2a3db0)`,
             WebkitBackgroundClip:'text', WebkitTextFillColor:'transparent',
-          }}>em realidade</span>{' '}
+          }}>e Ciência de Dados</span>{' '}
           <span style={{color:C.amber}}></span>
         </h1>
 
@@ -231,9 +231,9 @@ export function Hero() {
           maxWidth:490, margin:'0 0 34px',
           animation:'fadeUp .5s ease .37s both', fontWeight:300,
         }}>
-          Plataforma de analytics em tempo real cobrindo 54 mercados.
-          Decisões mais inteligentes com dados estruturados, dashboards
-          geo-contextuais e relatórios preditivos.
+          Modernizamos organizações, automatizamos operações e apoiamos
+          decisões estratégicas baseadas em dados e inteligência de negócio —
+          com DNA angolano.
         </p>
 
         <div style={{display:'flex',flexWrap:'wrap',gap:12,animation:'fadeUp .5s ease .52s both'}}>
@@ -288,9 +288,9 @@ export function Hero() {
           animation:'fadeUp .5s ease .67s both',
         }}>
           {[
-            { icon:<TrendingUp size={14}/>, value:'54',    label:'Mercados cobertos'   },
-            { icon:<BarChart2 size={14}/>,  value:'2.4M',  label:'Pontos de dados/dia' },
-            { icon:<Globe size={14}/>,      value:'99.8%', label:'Uptime garantido'    },
+            { icon:<TrendingUp size={14}/>, value:'Data',   label:'Science & Analytics' },
+            { icon:<BarChart2 size={14}/>,  value:'W-Agile',label:'Metodologia ágil'    },
+            { icon:<Globe size={14}/>,      value:'Gov.',   label:'Governança Digital'  },
           ].map(s => (
             <div key={s.label}>
               <div style={{

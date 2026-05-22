@@ -2,11 +2,11 @@
 import React from 'react'
 import Image from 'next/image'
 import Logotipo from '@/assets/Logotipo.png'
-import { Phone, Mail, MapPin, Heart } from 'lucide-react'
+import { Phone, Mail, MapPin, Heart, Linkedin, Instagram } from 'lucide-react'
 
 const footerLinks = {
-  Serviços: ['Desenvolvimento Web', 'Aplicações Mobile', 'Soluções Cloud', 'Cibersegurança', 'Software à Medida'],
-  Empresa:  ['Sobre Nós', 'Equipa', 'Testemunhos', 'Contacto'],
+  Serviços: ['Data Science & Analytics', 'Desenvolvimento de Software', 'Compliance & Risco', 'Consultoria Digital', 'Soluções Cloud'],
+  Empresa:  ['Sobre Nós', 'Projectos', 'Testemunhos', 'Contacto'],
 }
 
 export function Footer() {
@@ -21,8 +21,9 @@ export function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
           <div className="lg:col-span-2">
             <p className="text-slate-400 text-sm leading-relaxed max-w-sm">
-              Transformamos a sua visão digital em realidade. Soluções tecnológicas inovadoras
-              para impulsionar negócios em Angola e além fronteiras.
+              Empresa angolana especializada em Transformação Digital e Ciência de Dados.
+              Capacitamos organizações através de tecnologia inteligente, ágil e orientada
+              a resultados reais.
             </p>
             <div className="mt-6 space-y-2">
               <a href="tel:+244942745062" className="flex items-center gap-3 text-slate-400 hover:text-brand-400 transition-colors text-sm">
@@ -34,6 +35,27 @@ export function Footer() {
               <div className="flex items-center gap-3 text-slate-400 text-sm">
                 <MapPin size={14} className="text-brand-500" /> Luanda, Angola
               </div>
+            </div>
+            {/* Redes sociais */}
+            <div className="mt-6 flex items-center gap-3">
+              <a
+                href="https://www.linkedin.com/company/click-3-4/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center justify-center w-9 h-9 rounded-lg bg-brand-900/40 hover:bg-brand-500 transition-colors text-slate-400 hover:text-white"
+                aria-label="LinkedIn"
+              >
+                <Linkedin size={16} />
+              </a>
+              <a
+                href="https://www.instagram.com/click3.4_ao/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center justify-center w-9 h-9 rounded-lg bg-brand-900/40 hover:bg-brand-500 transition-colors text-slate-400 hover:text-white"
+                aria-label="Instagram"
+              >
+                <Instagram size={16} />
+              </a>
             </div>
           </div>
 

@@ -4,18 +4,18 @@ import { Badge } from '@/components/ui/Badge'
 import { CheckCircle2, Target, Lightbulb, Users2 } from 'lucide-react'
 
 const pillars = [
-  { icon: Target,    label: 'Missão',     text: 'Democratizar o acesso à tecnologia de ponta em Angola e impulsionar a transformação digital.' },
-  { icon: Lightbulb, label: 'Visão',      text: 'Ser a referência em inovação tecnológica em Angola, criando soluções que mudam o jogo.' },
-  { icon: Users2,    label: 'Valores',    text: 'Integridade, inovação contínua, compromisso com o cliente e excelência em cada entrega.' },
+  { icon: Target,    label: 'Missão',  text: 'Impulsionar a evolução digital das organizações através de soluções inteligentes, integradas e orientadas por dados, promovendo eficiência operacional, inovação contínua e decisões estratégicas mais rápidas e precisas.' },
+  { icon: Lightbulb, label: 'Visão',   text: 'Ser referência em transformação digital e ciência de dados em África, reconhecida pela capacidade de acelerar o crescimento sustentável das empresas e democratizar o acesso à tecnologia.' },
+  { icon: Users2,    label: 'Valores', text: 'Inovação contínua, foco no cliente, integridade nos dados, responsabilidade social e excelência técnica em cada solução que entregamos.' },
 ]
 
 const differentials = [
-  'Equipa especializada e certificada',
-  'Suporte técnico 24/7',
-  'Metodologias ágeis de desenvolvimento',
-  'Soluções escaláveis e seguras',
-  'Preços competitivos e transparentes',
-  'Entrega dentro do prazo',
+  'Data Science & Inteligência de Dados',
+  'Metodologia W-Agile',
+  'Governança Digital',
+  'Score de risco e crédito (Score Njima)',
+  'Compliance ARSEG e BNA',
+  'Plataformas digitais escaláveis',
 ]
 
 export function About() {
@@ -33,20 +33,21 @@ export function About() {
               <Badge>Sobre Nós</Badge>
             </div>
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-dark mb-6 leading-tight">
-              Tecnologia angolana ao{' '}
+              Transformação Digital com{' '}
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-500 to-brand-400">
-                alcance de um click
+                DNA Angolano
               </span>
             </h2>
             <p className="text-slate-600 leading-relaxed mb-6">
-              A Click 3.4 nasceu da paixão por tecnologia e do desejo de transformar o panorama digital
-              de Angola. Somos uma empresa tecnológica comprometida com a excelência, entregando soluções
-              inovadoras que impulsionam negócios locais e internacionais.
+              A Click 3.4 é uma empresa de direito angolano dedicada à Transformação Digital e Ciência
+              de Dados. Atuamos na interseção entre tecnologia, dados e estratégia, ajudando organizações
+              a modernizar processos, aumentar eficiência operacional e tomar decisões baseadas em
+              inteligência analítica.
             </p>
             <p className="text-slate-600 leading-relaxed mb-8">
-              Com uma equipa jovem, criativa e altamente qualificada, combinamos expertise técnica com
-              um profundo entendimento do mercado africano, criando soluções feitas à medida das necessidades
-              reais dos nossos clientes.
+              Capacitamos instituições e mercados através de tecnologia inteligente, ágil e orientada
+              a resultados reais — impulsionando a eficiência e a evolução digital com soluções de
+              alto impacto, mensuráveis e escaláveis.
             </p>
 
             {/* Differentials */}
