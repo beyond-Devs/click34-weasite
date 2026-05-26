@@ -117,11 +117,6 @@ export function Projects() {
     <section
       id="projects"
       className="py-24 bg-white relative overflow-hidden"
-      style={{
-        backgroundImage:
-          'linear-gradient(rgba(21,31,89,.03) 1px, transparent 1px), linear-gradient(90deg, rgba(21,31,89,.03) 1px, transparent 1px)',
-        backgroundSize: '50px 50px',
-      }}
     >
       <div
         className="absolute top-0 right-0 w-[480px] h-[480px] rounded-full pointer-events-none"

@@ -54,12 +54,7 @@ export function Partners() {
     <section
       id="partners"
       className="py-20 relative overflow-hidden"
-      style={{
-        background: '#F6F7FB',
-        backgroundImage:
-          'linear-gradient(rgba(21,31,89,.03) 1px, transparent 1px), linear-gradient(90deg, rgba(21,31,89,.03) 1px, transparent 1px)',
-        backgroundSize: '48px 48px',
-      }}
+      style={{ background: '#F6F7FB' }}
     >
       {/* Blobs decorativos */}
       <div

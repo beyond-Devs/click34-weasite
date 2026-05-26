@@ -54,13 +54,6 @@ const services = [
 export function Services() {
   return (
     <section id="services" className="py-24 bg-surface-2 relative overflow-hidden">
-      <div
-        className="absolute inset-0 opacity-40 pointer-events-none"
-        style={{
-          backgroundImage: 'radial-gradient(#161F6415 1px, transparent 1px)',
-          backgroundSize: '28px 28px',
-        }}
-      />
       <div className="absolute right-0 top-0 w-72 h-72 bg-brand-400/8 rounded-full blur-3xl pointer-events-none" />
 
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

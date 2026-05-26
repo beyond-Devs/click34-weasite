@@ -45,13 +45,6 @@ export function Contact() {
 
   return (
     <section id="contact" className="py-24 bg-surface-2 relative overflow-hidden">
-      <div
-        className="absolute inset-0 opacity-35 pointer-events-none"
-        style={{
-          backgroundImage: 'radial-gradient(#161F6414 1px, transparent 1px)',
-          backgroundSize: '28px 28px',
-        }}
-      />
       <div className="absolute left-1/2 bottom-0 -translate-x-1/2 w-[500px] h-[250px] bg-brand-400/10 rounded-full blur-3xl pointer-events-none" />
 
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
